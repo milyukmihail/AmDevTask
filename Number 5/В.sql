@@ -1,0 +1,1 @@
+select t.transaction_id, t.from_person_id, t.to_person_id, t.amount from transactions t join persons p1 on p1.id = t.from_person_id join cities c1 on c1.id = p1.city_id join persons p2 on p2.id = t.to_person_id join cities c2 on c2.id = p2.city_id where c2.id = c1.id

@@ -1,0 +1,1 @@
+select p.fullname, (100 + (select SUM(t.amount) from transactions t where t.to_person_id = p.id group by to_person_id) - (select SUM(t.amount) from transactions t where t.from_person_id = p.id group by from_person_id)) as balance from persons p
